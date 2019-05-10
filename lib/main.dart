@@ -58,8 +58,7 @@ class _MyHomePageState extends State<MyHomePage> {
               },
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(30.0)),
-            ),
-            Padding(padding: EdgeInsets.all(10.0),),
+            ),         
             RaisedButton(
               color: Color(0xFF212121),
               child: Text("Background Changer", style: TextStyle(
