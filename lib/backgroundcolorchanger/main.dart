@@ -7,7 +7,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   var colors = [
     Colors.red,
     Colors.pink,
@@ -30,12 +29,36 @@ class _MyHomePageState extends State<MyHomePage> {
     Colors.blueGrey
   ];
 
-  var currentColor = Colors.white;
+  var colorsButton = [
+    Colors.redAccent,
+    Colors.pinkAccent,
+    Colors.purpleAccent,
+    Colors.deepPurpleAccent,
+    Colors.indigoAccent,
+    Colors.blueAccent,
+    Colors.lightBlueAccent,
+    Colors.cyanAccent,
+    Colors.tealAccent,
+    Colors.greenAccent,
+    Colors.lightGreenAccent,
+    Colors.limeAccent,
+    Colors.yellowAccent,
+    Colors.amberAccent,
+    Colors.orangeAccent,
+    Colors.deepOrangeAccent,
+    Colors.brown,
+    Colors.grey,
+    Colors.blueGrey
+  ];
 
-  setRandomColor(){
+  var currentColor = Colors.white;
+  var currentButonColor = Colors.black;
+
+  setRandomColor() {
     var rnd = Random().nextInt(colors.length);
     setState(() {
-     currentColor = colors[rnd]; 
+      currentColor = colors[rnd];
+      currentButonColor = colorsButton[rnd];
     });
   }
 
@@ -52,18 +75,20 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-          RaisedButton(
-              color: Color(0xFF212121),
-              child: Text("Change it!", style: TextStyle(
-                color: Colors.white
-              ),),
-              onPressed:
-                  setRandomColor,
+            RaisedButton(
+              color: currentButonColor,
+              child: Text(
+                "Change it!",
+                style: TextStyle(color: Colors.white),
+              ),
+              onPressed: setRandomColor,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30.0)),
+                  elevation: 4.0,
             ),
           ],
         ),
       ),
-    
     );
   }
 }

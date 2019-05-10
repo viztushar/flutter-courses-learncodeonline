@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'backgroundcolorchanger/main.dart' as backgroundchanger;
 import 'SpanishNumberApp/main.dart' as SpanishNumberApp;
+import 'dice_roller/main.dart' as diceRoller;
 
 void main() => runApp(MyApp());
 
@@ -54,8 +55,11 @@ class _MyHomePageState extends State<MyHomePage> {
                     builder: (context) => SpanishNumberApp.MyHomePage(),
                   ),
                   );
-              }
+              },
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30.0)),
             ),
+            Padding(padding: EdgeInsets.all(10.0),),
             RaisedButton(
               color: Color(0xFF212121),
               child: Text("Background Changer", style: TextStyle(
@@ -68,7 +72,25 @@ class _MyHomePageState extends State<MyHomePage> {
                     builder: (context) => backgroundchanger.MyHomePage(),
                   ),
                   );
-              }
+              },
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30.0)),
+            ),
+            RaisedButton(
+              color: Color(0xFF212121),
+              child: Text("Dice Roller", style: TextStyle(
+                color: Colors.white
+              ),),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => diceRoller.MyDiceRoller(),
+                  ),
+                  );
+              },
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30.0)),
             ),
           ],
         ),
