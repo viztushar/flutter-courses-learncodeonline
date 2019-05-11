@@ -13,12 +13,15 @@ class _MyScratchAndWinState extends State<MyScratchAndWin> {
 
   List<String> itemArray;
   var luckyNumber;
+  var intTimePlay;
+  String gameOver;
 
   @override
   void initState() {
     super.initState();
     itemArray = List<String>.generate(25, (index) => "empty");
     genrateRandomNumber();
+    this.intTimePlay = 0;
   }
 
   genrateRandomNumber() {
@@ -64,6 +67,8 @@ class _MyScratchAndWinState extends State<MyScratchAndWin> {
 
   resetGame() {
     setState(() {
+      this.gameOver = "";
+      this.intTimePlay = 0;
       itemArray = List<String>.filled(25, "empty");
     });
     genrateRandomNumber();
@@ -97,7 +102,18 @@ class _MyScratchAndWinState extends State<MyScratchAndWin> {
                     height: 100.0,
                     child: RaisedButton(
                       onPressed: () {
-                        this.playGame(i);
+                        setState(() {
+                          this.intTimePlay += 1;
+                        });
+                        if ((intTimePlay != 6) && (intTimePlay < 6)) {
+                          this.playGame(i);
+                        } else if (intTimePlay == 6) {
+                          this.gameOver = "GameOver";
+                          setState(() {
+                            this.intTimePlay = 0;
+                          });
+                          this.resetGame();
+                        }
                       },
                       child: Image(image: this.getImage(i)),
                     ),
@@ -144,6 +160,17 @@ class _MyScratchAndWinState extends State<MyScratchAndWin> {
               onPressed: () {
                 this.resetGame();
               },
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.all(20.0),
+            child: Text(
+              "${this.gameOver}",
+              style: TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+                fontSize: 24.0,
+              ),
             ),
           ),
         ],
