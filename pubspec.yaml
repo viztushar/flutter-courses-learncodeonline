@@ -47,6 +47,10 @@ flutter:
     - images/dice_roller_four.png
     - images/dice_roller_five.png
     - images/dice_roller_six.png
+
+    - images/tictactoe_circle.png
+    - images/tictactoe_cross.png
+    - images/tictactoe_edit.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 

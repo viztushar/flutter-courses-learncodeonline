@@ -3,6 +3,7 @@ import 'package:flutter/painting.dart';
 import 'backgroundcolorchanger/main.dart' as backgroundchanger;
 import 'SpanishNumberApp/main.dart' as SpanishNumberApp;
 import 'dice_roller/main.dart' as diceRoller;
+import 'tictactoe/main.dart' as tictactoe;
 
 void main() => runApp(MyApp());
 
@@ -85,6 +86,22 @@ class _MyHomePageState extends State<MyHomePage> {
                   context,
                   MaterialPageRoute(
                     builder: (context) => diceRoller.MyDiceRoller(),
+                  ),
+                  );
+              },
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30.0)),
+            ),
+            RaisedButton(
+              color: Color(0xFF212121),
+              child: Text("TicTacToe", style: TextStyle(
+                color: Colors.white
+              ),),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => tictactoe.MyTicTacToe(),
                   ),
                   );
               },
