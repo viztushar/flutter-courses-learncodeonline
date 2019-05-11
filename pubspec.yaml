@@ -51,6 +51,10 @@ flutter:
     - images/tictactoe_circle.png
     - images/tictactoe_cross.png
     - images/tictactoe_edit.png
+
+    - images/scratchandwin_circle.png
+    - images/scratchandwin_rupee.png
+    - images/scratchandwin_sadFace.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 
