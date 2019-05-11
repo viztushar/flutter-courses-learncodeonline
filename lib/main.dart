@@ -5,6 +5,7 @@ import 'SpanishNumberApp/main.dart' as SpanishNumberApp;
 import 'dice_roller/main.dart' as diceRoller;
 import 'tictactoe/main.dart' as tictactoe;
 import 'scratchandwin/main.dart' as saw;
+import 'spanishnumberaudio/main.dart' as spnumaudio;
 
 void main() => runApp(MyApp());
 
@@ -119,6 +120,22 @@ class _MyHomePageState extends State<MyHomePage> {
                   context,
                   MaterialPageRoute(
                     builder: (context) => saw.MyScratchAndWin(),
+                  ),
+                  );
+              },
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30.0)),
+            ),
+            RaisedButton(
+              color: Color(0xFF212121),
+              child: Text("Spanish Number Audio", style: TextStyle(
+                color: Colors.white
+              ),),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => spnumaudio.MySpanishNumberAudio(),
                   ),
                   );
               },
