@@ -6,6 +6,7 @@ import 'dice_roller/main.dart' as diceRoller;
 import 'tictactoe/main.dart' as tictactoe;
 import 'scratchandwin/main.dart' as saw;
 import 'spanishnumberaudio/main.dart' as spnumaudio;
+import 'cameraandgesture/main.dart';
 
 void main() => runApp(MyApp());
 
@@ -138,6 +139,22 @@ class _MyHomePageState extends State<MyHomePage> {
                     builder: (context) => spnumaudio.MySpanishNumberAudio(),
                   ),
                   );
+              },
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30.0)),
+            ),
+            RaisedButton(
+              color: Color(0xFF212121),
+              child: Text("Camera And Gesture", style: TextStyle(
+                color: Colors.white
+              ),),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MyCameraAndGesture(),
+                  )
+                );
               },
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(30.0)),
