@@ -7,6 +7,8 @@ import 'tictactoe/main.dart' as tictactoe;
 import 'scratchandwin/main.dart' as saw;
 import 'spanishnumberaudio/main.dart' as spnumaudio;
 import 'cameraandgesture/main.dart';
+import 'drawer/main.dart';
+import 'mysignupapp/main.dart';
 
 void main() => runApp(MyApp());
 
@@ -153,6 +155,38 @@ class _MyHomePageState extends State<MyHomePage> {
                   context,
                   MaterialPageRoute(
                     builder: (context) => MyCameraAndGesture(),
+                  )
+                );
+              },
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30.0)),
+            ),
+            RaisedButton(
+              color: Color(0xFF212121),
+              child: Text("Drawer App", style: TextStyle(
+                color: Colors.white
+              ),),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MyDrawerApp(),
+                  )
+                );
+              },
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30.0)),
+            ),
+            RaisedButton(
+              color: Color(0xFF212121),
+              child: Text("User Data", style: TextStyle(
+                color: Colors.white
+              ),),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MySignUp(),
                   )
                 );
               },
