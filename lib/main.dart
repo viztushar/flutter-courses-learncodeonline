@@ -9,6 +9,7 @@ import 'spanishnumberaudio/main.dart' as spnumaudio;
 import 'cameraandgesture/main.dart';
 import 'drawer/main.dart';
 import 'mysignupapp/main.dart';
+import 'githubApiExample/main.dart';
 
 void main() => runApp(MyApp());
 
@@ -187,6 +188,22 @@ class _MyHomePageState extends State<MyHomePage> {
                   context,
                   MaterialPageRoute(
                     builder: (context) => MySignUp(),
+                  )
+                );
+              },
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30.0)),
+            ),
+            RaisedButton(
+              color: Color(0xFF212121),
+              child: Text("Githu API Example", style: TextStyle(
+                color: Colors.white
+              ),),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MyGithubApiExample(),
                   )
                 );
               },

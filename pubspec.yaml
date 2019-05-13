@@ -25,6 +25,7 @@ dependencies:
   cupertino_icons: ^0.1.2
   audioplayers: ^0.10.1
   image_picker: ^0.6.0+3
+  http:
 
 dev_dependencies:
   flutter_test:
