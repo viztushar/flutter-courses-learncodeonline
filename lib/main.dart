@@ -11,6 +11,7 @@ import 'drawer/main.dart';
 import 'mysignupapp/main.dart';
 import 'githubApiExample/main.dart';
 import 'myrandomapiexample/main.dart';
+import 'mydbtodo/main.dart';
 
 void main() => runApp(MyApp());
 
@@ -221,6 +222,22 @@ class _MyHomePageState extends State<MyHomePage> {
                   context,
                   MaterialPageRoute(
                     builder: (context) => MyRandomAPI(),
+                  )
+                );
+              },
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30.0)),
+            ),
+            RaisedButton(
+              color: Color(0xFF212121),
+              child: Text("TODO APP", style: TextStyle(
+                color: Colors.white
+              ),),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MyDbTodoApp(),
                   )
                 );
               },
