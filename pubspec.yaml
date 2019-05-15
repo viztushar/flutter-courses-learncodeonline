@@ -29,6 +29,8 @@ dependencies:
   sqflite:
   path_provider:
   intl:
+  firebase_auth:
+  firebase_core:
 
 dev_dependencies:
   flutter_test:

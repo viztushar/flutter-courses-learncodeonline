@@ -12,6 +12,7 @@ import 'mysignupapp/main.dart';
 import 'githubApiExample/main.dart';
 import 'myrandomapiexample/main.dart';
 import 'mydbtodo/main.dart';
+import 'firebase_example/main.dart';
 
 void main() => runApp(MyApp());
 
@@ -49,202 +50,226 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       backgroundColor: Colors.white,
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            RaisedButton(
-              color: Color(0xFF212121),
-              child: Text("Spanish Number", style: TextStyle(
-                color: Colors.white
-              ),),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => SpanishNumberApp.MyHomePage(),
-                  ),
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              RaisedButton(
+                color: Color(0xFF212121),
+                child: Text(
+                  "Spanish Number",
+                  style: TextStyle(color: Colors.white),
+                ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => SpanishNumberApp.MyHomePage(),
+                    ),
                   );
-              },
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30.0)),
-            ),         
-            RaisedButton(
-              color: Color(0xFF212121),
-              child: Text("Background Changer", style: TextStyle(
-                color: Colors.white
-              ),),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => backgroundchanger.MyHomePage(),
-                  ),
+                },
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30.0)),
+              ),
+              RaisedButton(
+                color: Color(0xFF212121),
+                child: Text(
+                  "Background Changer",
+                  style: TextStyle(color: Colors.white),
+                ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => backgroundchanger.MyHomePage(),
+                    ),
                   );
-              },
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30.0)),
-            ),
-            RaisedButton(
-              color: Color(0xFF212121),
-              child: Text("Dice Roller", style: TextStyle(
-                color: Colors.white
-              ),),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => diceRoller.MyDiceRoller(),
-                  ),
+                },
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30.0)),
+              ),
+              RaisedButton(
+                color: Color(0xFF212121),
+                child: Text(
+                  "Dice Roller",
+                  style: TextStyle(color: Colors.white),
+                ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => diceRoller.MyDiceRoller(),
+                    ),
                   );
-              },
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30.0)),
-            ),
-            RaisedButton(
-              color: Color(0xFF212121),
-              child: Text("TicTacToe", style: TextStyle(
-                color: Colors.white
-              ),),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => tictactoe.MyTicTacToe(),
-                  ),
+                },
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30.0)),
+              ),
+              RaisedButton(
+                color: Color(0xFF212121),
+                child: Text(
+                  "TicTacToe",
+                  style: TextStyle(color: Colors.white),
+                ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => tictactoe.MyTicTacToe(),
+                    ),
                   );
-              },
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30.0)),
-            ),
-            RaisedButton(
-              color: Color(0xFF212121),
-              child: Text("Scratch And Win", style: TextStyle(
-                color: Colors.white
-              ),),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => saw.MyScratchAndWin(),
-                  ),
+                },
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30.0)),
+              ),
+              RaisedButton(
+                color: Color(0xFF212121),
+                child: Text(
+                  "Scratch And Win",
+                  style: TextStyle(color: Colors.white),
+                ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => saw.MyScratchAndWin(),
+                    ),
                   );
-              },
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30.0)),
-            ),
-            RaisedButton(
-              color: Color(0xFF212121),
-              child: Text("Spanish Number Audio", style: TextStyle(
-                color: Colors.white
-              ),),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => spnumaudio.MySpanishNumberAudio(),
-                  ),
+                },
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30.0)),
+              ),
+              RaisedButton(
+                color: Color(0xFF212121),
+                child: Text(
+                  "Spanish Number Audio",
+                  style: TextStyle(color: Colors.white),
+                ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => spnumaudio.MySpanishNumberAudio(),
+                    ),
                   );
-              },
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30.0)),
-            ),
-            RaisedButton(
-              color: Color(0xFF212121),
-              child: Text("Camera And Gesture", style: TextStyle(
-                color: Colors.white
-              ),),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => MyCameraAndGesture(),
-                  )
-                );
-              },
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30.0)),
-            ),
-            RaisedButton(
-              color: Color(0xFF212121),
-              child: Text("Drawer App", style: TextStyle(
-                color: Colors.white
-              ),),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => MyDrawerApp(),
-                  )
-                );
-              },
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30.0)),
-            ),
-            RaisedButton(
-              color: Color(0xFF212121),
-              child: Text("User Data", style: TextStyle(
-                color: Colors.white
-              ),),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => MySignUp(),
-                  )
-                );
-              },
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30.0)),
-            ),
-            RaisedButton(
-              color: Color(0xFF212121),
-              child: Text("Github API Example", style: TextStyle(
-                color: Colors.white
-              ),),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => MyGithubApiExample(),
-                  )
-                );
-              },
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30.0)),
-            ),
-            RaisedButton(
-              color: Color(0xFF212121),
-              child: Text("Random API Example", style: TextStyle(
-                color: Colors.white
-              ),),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => MyRandomAPI(),
-                  )
-                );
-              },
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30.0)),
-            ),
-            RaisedButton(
-              color: Color(0xFF212121),
-              child: Text("TODO APP", style: TextStyle(
-                color: Colors.white
-              ),),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => MyDbTodoApp(),
-                  )
-                );
-              },
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30.0)),
-            ),
-          ],
+                },
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30.0)),
+              ),
+              RaisedButton(
+                color: Color(0xFF212121),
+                child: Text(
+                  "Camera And Gesture",
+                  style: TextStyle(color: Colors.white),
+                ),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => MyCameraAndGesture(),
+                      ));
+                },
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30.0)),
+              ),
+              RaisedButton(
+                color: Color(0xFF212121),
+                child: Text(
+                  "Drawer App",
+                  style: TextStyle(color: Colors.white),
+                ),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => MyDrawerApp(),
+                      ));
+                },
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30.0)),
+              ),
+              RaisedButton(
+                color: Color(0xFF212121),
+                child: Text(
+                  "User Data",
+                  style: TextStyle(color: Colors.white),
+                ),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => MySignUp(),
+                      ));
+                },
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30.0)),
+              ),
+              RaisedButton(
+                color: Color(0xFF212121),
+                child: Text(
+                  "Github API Example",
+                  style: TextStyle(color: Colors.white),
+                ),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => MyGithubApiExample(),
+                      ));
+                },
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30.0)),
+              ),
+              RaisedButton(
+                color: Color(0xFF212121),
+                child: Text(
+                  "Random API Example",
+                  style: TextStyle(color: Colors.white),
+                ),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => MyRandomAPI(),
+                      ));
+                },
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30.0)),
+              ),
+              RaisedButton(
+                color: Color(0xFF212121),
+                child: Text(
+                  "TODO APP",
+                  style: TextStyle(color: Colors.white),
+                ),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => MyDbTodoApp(),
+                      ));
+                },
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30.0)),
+              ),
+              RaisedButton(
+                color: Color(0xFF212121),
+                child: Text(
+                  "Firebase Example",
+                  style: TextStyle(color: Colors.white),
+                ),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => MyFirebaseApp(),
+                      ));
+                },
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30.0)),
+              ),
+            ],
+          ),
         ),
       ),
     );
