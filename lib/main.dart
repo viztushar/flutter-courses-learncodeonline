@@ -13,6 +13,7 @@ import 'githubApiExample/main.dart';
 import 'myrandomapiexample/main.dart';
 import 'mydbtodo/main.dart';
 import 'firebase_example/main.dart';
+import 'firebase_database/main.dart';
 
 void main() => runApp(MyApp());
 
@@ -263,6 +264,22 @@ class _MyHomePageState extends State<MyHomePage> {
                       context,
                       MaterialPageRoute(
                         builder: (context) => MyFirebaseApp(),
+                      ));
+                },
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30.0)),
+              ),
+              RaisedButton(
+                color: Color(0xFF212121),
+                child: Text(
+                  "Firebase Database Example",
+                  style: TextStyle(color: Colors.white),
+                ),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => MyFirebaseDatabase(),
                       ));
                 },
                 shape: RoundedRectangleBorder(
